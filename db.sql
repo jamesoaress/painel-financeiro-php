@@ -7,7 +7,8 @@ CREATE TABLE compras (
     ativo VARCHAR(10) NOT NULL,
     quantidade INT NOT NULL,
     valor_unitario DECIMAL(10, 2) NOT NULL,
-    data_compra DATE NOT NULL
+    data_compra DATE NOT NULL,
+   
 );
 
 CREATE DATABASE funcionario;

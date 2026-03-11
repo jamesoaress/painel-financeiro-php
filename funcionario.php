@@ -2,9 +2,9 @@
     require_once 'classes/Funcionario.php';
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $compra = new Funcionario ();
-        $compra->adicionarFuncionario($_POST['nome'], $_POST['cpf'], $_POST['cargo'], $_POST['data_nasc']);
-        echo "Funcionario cadastado com sucesso!";
+        $func = new Funcionario ();
+        $func->adicionarFuncionario($_POST['nome'], $_POST['cpf'], $_POST['cargo'], $_POST['data_nasc']);
+        echo "Funcionario cadastrado com sucesso!";
     }
 
     include 'header.php';

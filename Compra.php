@@ -9,14 +9,15 @@ class Compra {
         $this->db = (new Database())->connect();
     }
 
-    public function adicionarCompra($ativo, $quantidade, $valorUnitario, $dataCompra) {
-        $sql = "INSERT INTO compras (ativo, quantidade, valor_unitario, data_compra) VALUES (:ativo, :quantidade, :valor_unitario, :data_compra)";
+    public function adicionarCompra($ativo, $quantidade, $valorUnitario, $dataCompra, $dividendo) {
+        $sql = "INSERT INTO compras (ativo, quantidade, valor_unitario, data_compra, dividendo) VALUES (:ativo, :quantidade, :valor_unitario, :data_compra, :dividendo)";
         $stmt = $this->db->prepare($sql);
         $stmt->execute([
             'ativo' => $ativo,
             'quantidade' => $quantidade,
             'valor_unitario' => $valorUnitario,
-            'data_compra' => $dataCompra
+            'data_compra' => $dataCompra,
+            'dividendo' => $dividendo
         ]);
     }
 

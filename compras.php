@@ -3,7 +3,7 @@
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $compra = new Compra();
-        $compra->adicionarCompra($_POST['ativo'], $_POST['quantidade'], $_POST['valor_unitario'], $_POST['data_compra']);
+        $compra->adicionarCompra($_POST['ativo'], $_POST['quantidade'], $_POST['valor_unitario'], $_POST['data_compra'], $_POST['dividendo']);
         echo "Compra adicionada com sucesso!";
     }
 
@@ -27,6 +27,8 @@
         <input type="number" name="quantidade" required><br>
         <label>Valor Unitário:</label>
         <input type="number" step="0.01" name="valor_unitario" required><br>
+        <label>Valor do Dividendo:</label>
+        <input type="number" step="0.01" name="dividendo" required><br>
         <label>Data da Compra:</label>
         <input type="date" name="data_compra" required><br>
         <button type="submit">Cadastrar</button>
